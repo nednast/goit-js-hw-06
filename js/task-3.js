@@ -1,6 +1,6 @@
 class StringBuilder {
   #value;
-  constructor(initialValue = "") {
+  constructor(initialValue) {
     this.#value = initialValue;
   }
   getValue() {
@@ -8,11 +8,15 @@ class StringBuilder {
   }
 
   padEnd(str) {
-    this.#value = this.#value + str;
+    let b = this.#value.split("");
+    b.push(str);
+    this.#value = b.join("");
   }
 
   padStart(str) {
-    this.#value = str + this.#value;
+    let a = this.#value.split("");
+    a.unshift(str);
+    this.#value = a.join("");
   }
 
   padBoth(str) {
